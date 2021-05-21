@@ -20,8 +20,9 @@ refs.startBtn.addEventListener('click', onStartClick);  // слухач на sta
 function onStartClick() {
     console.log('Start is clicked!');
     intervalId = setInterval(() => {
-        index = randomIntegerFromInterval(0, colors.length)
-        refs.bodyEl.style.backgroundColor = colors[index];
+      index = randomIntegerFromInterval(0, colors.length - 1);
+      console.log('index: ',index);
+      refs.bodyEl.style.backgroundColor = colors[index];
     }, 1000);
     refs.stopBtn.addEventListener('click', onStopClick); // слухач на stop
     refs.startBtn.removeEventListener('click', onStartClick); // вимикаємо start
